@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Assistant Portal - Login</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Inter, sans-serif; }
+body { background: #0f0f0f; display:flex; justify-content:center; align-items:center; min-height:100vh; padding:20px; }
+.main-box {
+    display: flex;
+    width: 900px;
+    max-width: 100%;
+    height: 550px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+/* LEFT BLUE SIDE */
+.left {
+    width: 48%;
+    background: linear-gradient(180deg, #0a2a6b 0%, #102e7a 100%);
+    color: white;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.left-top { font-size: 12px; opacity:0.9; display:flex; align-items:center; gap:8px; }
+.left h1 { font-size: 32px; line-height: 1.2; margin-top: 25px; font-weight: 800; }
+.laptop-box {
+    margin-top: 30px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 15px;
+}
+.laptop-box img { width: 100%; border-radius: 8px; }
+.doc-list { margin-top:12px; font-size:11px; opacity:0.8; line-height:1.6; }
+.badges { display:flex; gap:15px; margin-top:20px; font-size:10px; opacity:0.7; }
+
+/* RIGHT WHITE SIDE */
+.right {
+    width: 52%;
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.right h2 { font-size: 26px; color: #1a1a1a; font-weight: 800; }
+.right .subtitle { font-size: 12px; color: #666; margin: 5px 0 25px 0; }
+.input-group { margin-bottom: 14px; }
+.input-group label { font-size: 12px; font-weight: 600; color: #333; }
+.input-field {
+    width: 100%;
+    margin-top: 6px;
+    padding: 11px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    font-size: 13px;
+    display:flex; align-items:center; gap:8px;
+}
+.input-field input { border:none; outline:none; width:100%; }
+.input-field:focus-within { border-color: #0a2a6b; }
+.check-row { display:flex; justify-content:space-between; align-items:center; font-size:11px; margin:12px 0; }
+.check-row a { color:#0a2a6b; text-decoration:none; }
+.login-btn {
+    width:100%;
+    padding:12px;
+    background:#1e4bd8;
+    color:white;
+    border:none;
+    border-radius:20px;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:5px;
+}
+.or { text-align:center; font-size:11px; color:#888; margin:14px 0; }
+.create-btn {
+    width:100%;
+    padding:11px;
+    background:white;
+    border:1.5px solid #ddd;
+    border-radius:20px;
+    font-weight:600;
+    cursor:pointer;
+}
+.footer { font-size:9px; color:#888; text-align:center; margin-top:18px; }
+
+@media(max-width:700px){
+    .main-box{flex-direction:column;height:auto}
+    .left,.right{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="main-box">
+    <!-- LEFT -->
+    <div class="left">
+        <div>
+            <div class="left-top">🛡️ AI Assistant Portal</div>
+            <h1>Your Documents and Questions,<br>One Place</h1>
+            <div class="laptop-box">
+                <div style="background:white; border-radius:8px; padding:10px; color:#333; font-size:11px;">
+                    <div style="font-weight:bold; margin-bottom:8px;">🔍 Search your documents...</div>
+                    <div style="background:#f5f5f5; padding:6px 8px; border-radius:6px; margin-bottom:5px;">📄 Q3_Finance_Report.pdf<br><span style="font-size:9px;color:#888;">24 pages</span></div>
+                    <div style="background:#f5f5f5; padding:6px 8px; border-radius:6px; margin-bottom:5px;">📄 Project_Proposal_v2.docx</div>
+                    <div style="background:#f5f5f5; padding:6px 8px; border-radius:6px;">📄 Contract_Agreement.pdf</div>
+                </div>
+            </div>
+        </div>
+        <div class="badges">
+            <span>🔒 Secure</span>
+            <span>🛡️ Private</span>
+            <span>⚡ AI-Powered</span>
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+        <h2>Welcome Back</h2>
+        <p class="subtitle">Sign in to your AI-Powered Secure Document Search Portal</p>
+        
+        <form method="POST" action="/login">
+            <div class="input-group">
+                <label>Email address</label>
+                <div class="input-field">
+                    <span>✉️</span>
+                    <input type="text" name="username" placeholder="name@example.com" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <div class="input-field">
+                    <span>🔒</span>
+                    <input type="password" name="password" placeholder="••••••••" required>
+                    <span style="cursor:pointer;">👁️</span>
+                </div>
+            </div>
+
+            <div class="check-row">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <button class="login-btn" type="submit">Login</button>
+            <div class="or">— or —</div>
+            <button class="create-btn" type="button" onclick="alert('Contact Admin to create account')">Create New Account</button>
+        </form>
+
+        <div class="footer">🛡️ Protected by 256-bit encryption • Privacy compliant • SOC 2 certified</div>
+    </div>
+</div>
+</body>
+</html>
